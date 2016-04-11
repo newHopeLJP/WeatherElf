@@ -7,15 +7,19 @@
 * 使用CocoaPods管理用到的第三方库
 
 ###屏幕截屏
-
+<img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/beijing.png" width = "375" height = "667" alt="beijing" align=center />
+<img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/xiamen.png" width = "375" height = "667" alt="xiamen" align=center /><img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/hanghzou.png" width = "375" height = "667" alt="hangzhou" align=center />
+<img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/shanghai.png" width = "375" height = "667" alt="shanghai" align=center /><img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/shenzhen.png" width = "375" height = "667" alt="shenzhen" align=center />
+<img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/guangzhou.png" width = "375" height = "667" alt="guangzhou" align=center /><img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/xian.png" width = "375" height = "667" alt="xian" align=center />
 ###已实现功能
 * 显示当天以及未来3天的天气情况以及生活指数情况
+* 根据当前的空气质量自动改变界面背景
 * 手动刷新当天实时天气情况
 * 可以同时显示多个地方的天气预报情况，通过左右滑动切换定制的城市
 
 ###待添加功能
 * 加入定位功能，默认显示定位所在地的天气情况
-* 加入地址管理功能，用户自行配置要显示的一个或多个城市
+* 加入地址管理功能，用户自行配置要显示的一个或多个城市（目前是写死的😳）
 * 显示更加详细的一天的天气变化曲线
 * 加入出行提醒功能（主要包括出发地和目的地的天气情况），做好出行准备
 
