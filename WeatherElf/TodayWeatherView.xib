@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TodayWeatherView">
+            <rect key="frame" x="0.0" y="0.0" width="281" height="228.5"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016年4月9日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6h-Md-QMq">
+                    <rect key="frame" x="91" y="8" width="98" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aht-Wp-ncM">
+                    <rect key="frame" x="115" y="34" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Y2M-Pa-tHh"/>
+                        <constraint firstAttribute="width" constant="50" id="enP-cR-eM5"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17℃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvP-tb-E8I">
+                    <rect key="frame" x="108" y="92" width="64" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晴 ｜ 微风" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qny-zw-Ppf">
+                    <rect key="frame" x="111" y="136" width="59.5" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOz-vl-6I4">
+                    <rect key="frame" x="140" y="157" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="JvP-tb-E8I" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FCM-dY-Nz3"/>
+                <constraint firstItem="aht-Wp-ncM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Kto-hs-nWt"/>
+                <constraint firstItem="JvP-tb-E8I" firstAttribute="top" secondItem="aht-Wp-ncM" secondAttribute="bottom" constant="8" id="TcC-qR-TsU"/>
+                <constraint firstItem="aht-Wp-ncM" firstAttribute="top" secondItem="H6h-Md-QMq" secondAttribute="bottom" constant="8" id="XcS-f4-WvP"/>
+                <constraint firstItem="wOz-vl-6I4" firstAttribute="top" secondItem="Qny-zw-Ppf" secondAttribute="bottom" constant="5" id="Z9L-iQ-Mnf"/>
+                <constraint firstItem="Qny-zw-Ppf" firstAttribute="top" secondItem="JvP-tb-E8I" secondAttribute="bottom" constant="8" id="ZXR-WM-vgR"/>
+                <constraint firstItem="wOz-vl-6I4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="c4L-hM-0CE"/>
+                <constraint firstItem="H6h-Md-QMq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="eDN-b7-xsH"/>
+                <constraint firstItem="H6h-Md-QMq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="heX-XN-DOu"/>
+                <constraint firstItem="Qny-zw-Ppf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xdB-HV-eZG"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dateLabel" destination="H6h-Md-QMq" id="ADP-nG-xSD"/>
+                <outlet property="descLabel" destination="Qny-zw-Ppf" id="sM3-z2-FfC"/>
+                <outlet property="imageView" destination="aht-Wp-ncM" id="Odz-zH-Dxi"/>
+                <outlet property="pm25Label" destination="wOz-vl-6I4" id="Vid-1C-Vfr"/>
+                <outlet property="temperatureLabel" destination="JvP-tb-E8I" id="rkW-DS-jZD"/>
+            </connections>
+            <point key="canvasLocation" x="100.5" y="138.25"/>
+        </view>
+    </objects>
+</document>
