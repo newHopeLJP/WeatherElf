@@ -9,7 +9,7 @@
 ###屏幕截屏
 <img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/beijing.png" width = "375" height = "667" alt="beijing" align=center />
 
-<img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/xiamen.png" width = "375" height = "667" alt="xiamen" align=center /><img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/hanghzou.png" width = "375" height = "667" alt="hanghzou" align=center />
+<img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/xiamen.png" width = "375" height = "667" alt="xiamen" align=center /><img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/hangzhou.png" width = "375" height = "667" alt="hangzhou" align=center />
 <img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/shanghai.png" width = "375" height = "667" alt="shanghai" align=center /><img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/shenzhen.png" width = "375" height = "667" alt="shenzhen" align=center />
 <img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/guangzhou.png" width = "375" height = "667" alt="guangzhou" align=center /><img src="https://github.com/newHopeLJP/WeatherElf/blob/master/Screenshots/xian.png" width = "375" height = "667" alt="xian" align=center />
 ###已实现功能
