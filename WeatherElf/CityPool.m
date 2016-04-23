@@ -54,12 +54,15 @@
 - (void)addCityByName:(NSString *)cityName{
     if (![self.cityList containsObject:cityName]) {
         [self.cityList addObject:cityName];
+        if (self.delegate &&[self.delegate respondsToSelector:@selector(cityPoolChangedWithCity:changedType:)]) {
+            [self.delegate cityPoolChangedWithCity:cityName changedType:CityPoolChangedTypeAdd];
+        }
     }
 }
 
 - (NSMutableArray<NSString *> *)cityList{
     if (!_cityList) {
-        _cityList=[NSMutableArray arrayWithArray:@[@"北京",@"厦门",@"深圳",@"上海",@"广州",@"杭州",@"西安",]];
+        _cityList=[NSMutableArray arrayWithArray:@[@"北京",@"厦门",@"深圳",@"上海",@"广州",@"杭州",@"西安"]];
     }
     return _cityList;
 }

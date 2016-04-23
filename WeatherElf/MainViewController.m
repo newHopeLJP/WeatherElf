@@ -8,11 +8,12 @@
 
 #import "MainViewController.h"
 #import "WeatherViewController.h"
+#import "CityManageController.h"
 #import "CityPool.h"
 
 #define kDEFAULT_BACKGROUND_GRADIENT    @"gradient5"
 
-@interface MainViewController ()<UIScrollViewDelegate>
+@interface MainViewController ()<UIScrollViewDelegate,CityPoolDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *locationLable;
 @property (weak, nonatomic) IBOutlet UIScrollView *weatherScrollView;
@@ -46,8 +47,11 @@
     self.weatherScrollView.showsHorizontalScrollIndicator = NO;
     self.curWeatherViewController=vc;
     
-   
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = item;
+    [[UINavigationBar appearance] setTintColor:[UIColor grayColor]];
     
+    [CityPool shareCityPool].delegate=self;
     
 }
 
@@ -78,12 +82,16 @@
 
 - (void)addController{
     for (int i=0; i<[CityPool shareCityPool].cities.count; i++) {
-        UIStoryboard *sb=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        WeatherViewController *weatherVC=[sb instantiateViewControllerWithIdentifier:@"weather"];
-        weatherVC.locationName=[CityPool shareCityPool].cities[i];
-        [self addChildViewController:weatherVC];
+        [self addWeatherViewControllerByCityName:[CityPool shareCityPool].cities[i]];
     }
    
+}
+
+- (void)addWeatherViewControllerByCityName:(NSString *)city{
+    UIStoryboard *sb=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    WeatherViewController *weatherVC=[sb instantiateViewControllerWithIdentifier:@"weather"];
+    weatherVC.locationName=city;
+    [self addChildViewController:weatherVC];
 }
 
 - (NSDictionary *)bgPictureDict{
@@ -150,5 +158,29 @@
     
 }
 
+#pragma mark - CityPoolDelegate
+- (void)cityPoolChangedWithCity:(NSString *)city changedType:(CityPoolChangedType)changedType{
+    if (changedType==CityPoolChangedTypeAdd) {
+        [self addWeatherViewControllerByCityName:city];
+        
+    }else if(changedType==CityPoolChangedTypeRemove){
+        
+    
+    }
+    CGFloat contentX = self.childViewControllers.count * [UIScreen mainScreen].bounds.size.width;
+    self.weatherScrollView.contentSize = CGSizeMake(contentX, 0);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.destinationViewController isMemberOfClass:[CityManageController class]]) {
+        CityManageController *toVC=segue.destinationViewController;
+        toVC.didSelectCity=^(NSInteger cityIndex){
+            CGPoint newOffset=CGPointMake(self.weatherScrollView.frame.size.width*cityIndex,0);
+            [self.weatherScrollView setContentOffset:newOffset animated:YES];
+//            self.weatherScrollView.contentOffset=newOffset;
+//            [self scrollViewDidEndDecelerating:self.weatherScrollView];//手动调用
+        };
+    }
+}
 
 @end

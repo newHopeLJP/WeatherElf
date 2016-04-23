@@ -229,6 +229,9 @@
                                                     <constraint firstAttribute="height" constant="25" id="gQu-wt-9Tj"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="top_navigation_menuicon"/>
+                                                <connections>
+                                                    <segue destination="ZUS-dV-3q8" kind="show" id="LDS-6S-3WC"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tI0-Hy-wzJ">
                                                 <rect key="frame" x="560" y="5" width="25" height="25"/>
@@ -304,6 +307,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mx3-R6-F5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="990" y="814"/>
+        </scene>
+        <!--CityManage-->
+        <scene sceneID="4ad-nG-5C6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CityManage" id="ZUS-dV-3q8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xgp-bf-8Ma" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1402.5" y="748"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dBU-tS-GK9">

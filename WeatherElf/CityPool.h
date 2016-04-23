@@ -8,8 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger,CityPoolChangedType){
+    CityPoolChangedTypeAdd,
+    CityPoolChangedTypeRemove
+};
+
+@protocol CityPoolDelegate <NSObject>
+
+@optional
+- (void)cityPoolChangedWithCity:(NSString *)city changedType:(CityPoolChangedType)changedType;
+
+@end
+
+
+
+
 @interface CityPool : NSObject
 
+@property (nonatomic,weak)id<CityPoolDelegate> delegate;
 @property (nonatomic,strong,readonly) NSArray<NSString *> *cities;
 
 - (void)addCityByName:(NSString *)cityName;
