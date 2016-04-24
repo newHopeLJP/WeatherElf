@@ -11,6 +11,7 @@
 #import "CityPool.h"
 
 @interface CityManageController ()<UITableViewDataSource,UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -35,6 +36,7 @@
     layoutMargins.right=layoutMargins.left;
     self.tableView.layoutMargins=layoutMargins;
 }
+
 - (IBAction)addCity:(UIButton *)sender {
     CityViewController *cityViewController=[[CityViewController alloc]init];
     cityViewController.currentCityString=@"北京";
@@ -44,8 +46,6 @@
     };
     
     [self presentViewController:cityViewController animated:YES completion:nil];
-    
-//    [self.navigationController pushViewController:cityViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,8 +63,8 @@
     UITableViewCell *cell;
     if (indexPath.row==0) {
         cell=[tableView dequeueReusableCellWithIdentifier:@"currentCityCell" forIndexPath:indexPath];
-       cell.textLabel.text=[CityPool shareCityPool].cities[indexPath.row];
-       cell.detailTextLabel.text=@"当前位置";
+        cell.textLabel.text=[CityPool shareCityPool].cities[indexPath.row];
+        cell.detailTextLabel.text=@"当前位置";
         cell.detailTextLabel.font=[UIFont systemFontOfSize:13];
     }else{
         cell=[tableView dequeueReusableCellWithIdentifier:@"cityCell" forIndexPath:indexPath];
@@ -94,10 +94,6 @@
     imageView.image=[UIImage imageNamed:@"location-marker"];
     [cell.contentView addSubview:imageView];
 }
-
-//- (void)dealloc{
-//    self.didSelectCity=nil;
-//}
 
 /*
 #pragma mark - Navigation

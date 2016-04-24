@@ -20,15 +20,15 @@ typedef NS_ENUM(NSInteger,CityPoolChangedType){
 
 @end
 
-
-
-
 @interface CityPool : NSObject
 
 @property (nonatomic,weak)id<CityPoolDelegate> delegate;
 @property (nonatomic,strong,readonly) NSArray<NSString *> *cities;
+@property (nonatomic,strong) NSString *localCity;//定位城市
 
 - (void)addCityByName:(NSString *)cityName;
+
+- (void)insertCity:(NSString *)city atIndex:(NSUInteger)index;
 
 - (NSString *)cityBeforeCity:(NSString *)city;
 

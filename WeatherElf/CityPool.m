@@ -60,6 +60,16 @@
     }
 }
 
+- (void)insertCity:(NSString *)city atIndex:(NSUInteger)index{
+    if (![self.cityList containsObject:city]) {
+        [self.cityList insertObject:city atIndex:index];
+        if (self.delegate &&[self.delegate respondsToSelector:@selector(cityPoolChangedWithCity:changedType:)]) {
+            [self.delegate cityPoolChangedWithCity:city changedType:CityPoolChangedTypeAdd];
+        }
+    }
+
+}
+
 - (NSMutableArray<NSString *> *)cityList{
     if (!_cityList) {
         _cityList=[NSMutableArray arrayWithArray:@[@"北京",@"厦门",@"深圳",@"上海",@"广州",@"杭州",@"西安"]];
